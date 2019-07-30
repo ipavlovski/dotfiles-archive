@@ -1,0 +1,8 @@
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias ll='LC_COLLATE=C ls -Alh --time-style=+[%y-%m-%d\ %T] --group-directories-first'
+alias ip='ip -c'
+alias gping='sudo ping -c 3 www.google.com'
+alias cal='cal -n 3 -m'
+alias grep='grep --color=auto'
+alias config='/usr/bin/git --git-dir=/home/ilyapavlovski/.cfg/ --work-tree=/home/ilyapavlovski'
