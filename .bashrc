@@ -1,12 +1,13 @@
+PS1='\e[0;34m\n::: \033[0;32m\u\033[0;34m@\033[0;31m\h\033[0;34m ::: $(parse_dir)\n\$\e[0m'
 ### BASHRC ###
 
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # HISTORY
-shopt -s histappend
+# shopt -s histappend
 export HISTTIMEFORMAT="%F %T " # Add timestamp to history
-export HISTCONTROL=ignorespace
+# export HISTCONTROL=ignorespace
 export HISTFILESIZE=999999
 export HISTSIZE=999999
 
@@ -45,7 +46,9 @@ function parse_dir() {
     fi   
 }
 
-PS1='\e[0;34m\n::: \033[0;32m\u\033[0;34m@\033[0;31m\h\033[0;34m ::: $(parse_dir)\n\$ \e[m'
+# PS1='\e[0;34m\n::: \033[0;32m\u\033[0;34m@\033[0;31m\h\033[0;34m ::: $(parse_dir)\n\$ '
+# PS1='\u@\h:\w\$ '
+PS1='\e\[\033[1;34m\]\n::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
 
 function export_subdirs() {
     local dir
