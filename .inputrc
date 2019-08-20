@@ -1,0 +1,11 @@
+# inputrc configuration file
+
+# variables
+set completion-query-items 200
+
+# readline commands
+"\C-j": backward-char
+"\ej": backward-word
+
+# shell commands
+"\el": "ls -la\C-m"

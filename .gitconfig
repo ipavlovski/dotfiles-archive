@@ -1,0 +1,7 @@
+[user]
+	name = ipavlovski
+	email = ilya.pavlovski@gmail.com
+[color "diff"]
+	meta = blue black bold
+[alias]
+	slog = log --pretty=oneline --abbrev-commit
