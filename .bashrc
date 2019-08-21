@@ -59,7 +59,8 @@ function export_subdirs() {
     for dir in $(ls $1); do export $dir="${1}/${dir}"; done
 }
 
-export_subdirs ~/projects
+[ -d ~/projects ] && export_subdirs ~/projects
+
 
 
 
