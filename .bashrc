@@ -1,8 +1,12 @@
-PS1='\e[0;34m\n::: \033[0;32m\u\033[0;34m@\033[0;31m\h\033[0;34m ::: $(parse_dir)\n\$\e[0m'
 ### BASHRC ###
 
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+## LOCALE
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 
 # HISTORY
 # shopt -s histappend
