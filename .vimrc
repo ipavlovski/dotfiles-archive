@@ -10,6 +10,9 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
+
+set mouse=a
+
 " tab commands
 nnoremap <leader>} :tabnext<CR>
 nnoremap <leader>{ :tabprevious<CR>
