@@ -1,1 +1,14 @@
 .httr-oauth
+.cfg
+downloads
+code
+.ssh
+*_history
+.password-store
+.R
+.dbus
+.fonts
+.Xauthority
+.vim/plugged
+.tmux
+.viminfo
