@@ -10,7 +10,7 @@ filetype plugin indent on
 syntax on
 set encoding=utf-8
 
-
+set ttymouse=xterm2
 set mouse=a
 
 " tab commands

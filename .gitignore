@@ -12,3 +12,5 @@ code
 .vim/plugged
 .tmux
 .viminfo
+.pki
+.rstudio-desktop

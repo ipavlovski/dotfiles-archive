@@ -4,9 +4,10 @@
 [[ $- != *i* ]] && return
 
 ## LOCALE
-export LC_ALL=en_CA.UTF-8
-export LANG=en_CA.UTF-8
-
+if [[ $(type locale 2>/dev/null) && $(grep en_CA <(locale -a)) ]]; then 
+    export LC_ALL=en_CA.UTF-8
+    export LANG=en_CA.UTF-8
+fi
 
 # HISTORY
 # shopt -s histappend
@@ -79,6 +80,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+## functions
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+fi
 
 ## bash completion
 if ! shopt -oq posix; then
