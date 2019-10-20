@@ -94,7 +94,10 @@ if ! shopt -oq posix; then
 fi
 
 
+
+
 ## tmux
+# export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}: ${PWD##*/}\007"'
 ## [ -z "$TMUX"  ] && { tmux attach-session -d -t local || exec tmux new-session -s local; }
 [[ -z "$TMUX"  ]] && { tmux new-session -A -s main; }
 ## tmux new-session -A -s main
