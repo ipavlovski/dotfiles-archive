@@ -51,9 +51,8 @@ function parse_dir() {
     fi   
 }
 
-# PS1='\e[0;34m\n::: \033[0;32m\u\033[0;34m@\033[0;31m\h\033[0;34m ::: $(parse_dir)\n\$ '
-# PS1='\u@\h:\w\$ '
-PS1='\e\[\033[1;34m\]\n::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
+# PS1='\e\[\033[1;34m\]\n::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
+PS1='\e\[\033[1;34m\]::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
 
 function export_subdirs() {
     local dir
@@ -96,5 +95,6 @@ fi
 
 
 ## tmux
-[ -z "$TMUX"  ] && { tmux attach-session -d -t local || exec tmux new-session -s local; }
-
+## [ -z "$TMUX"  ] && { tmux attach-session -d -t local || exec tmux new-session -s local; }
+[[ -z "$TMUX"  ]] && { tmux new-session -A -s main; }
+## tmux new-session -A -s main
