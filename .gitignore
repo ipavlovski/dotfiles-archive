@@ -14,3 +14,5 @@ code
 .viminfo
 .pki
 .rstudio-desktop
+.wget-hsts
+.mysql
