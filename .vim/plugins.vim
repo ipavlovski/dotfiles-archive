@@ -12,5 +12,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mtth/scratch.vim'
 Plug 'junegunn/seoul256.vim'
 Plug 'mhinz/vim-startify'
+Plug 'christoomey/vim-tmux-runner'
 
 call plug#end()

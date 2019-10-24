@@ -13,6 +13,10 @@ set encoding=utf-8
 set ttymouse=xterm2
 set mouse=a
 
+
+set hidden
+set noswapfile
+
 " tab commands
 nnoremap <leader>} :tabnext<CR>
 nnoremap <leader>{ :tabprevious<CR>
@@ -67,7 +71,7 @@ colorscheme seoul256
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 "" Scratch
-noremap <leader>s :ScratchPreview<CR>
+noremap <leader>s :Scratch<CR>
 
 "" FZF
 nnoremap <leader><C-f> :Files 
@@ -81,4 +85,8 @@ nnoremap <leader><C-k> :Maps<CR>
 "" Markdown
 let g:vim_markdown_folding_level=2
 
+"" VTR
 
+nnoremap <leader>l :VtrClearRunner<CR>
+map <leader><return> :VtrSendLinesToRunner<CR>
+nnoremap <leader>ea :VtrAttachToPane<CR>

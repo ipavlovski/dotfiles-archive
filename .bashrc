@@ -101,3 +101,7 @@ fi
 ## [ -z "$TMUX"  ] && { tmux attach-session -d -t local || exec tmux new-session -s local; }
 [[ -z "$TMUX"  ]] && { tmux new-session -A -s main; }
 ## tmux new-session -A -s main
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/ilyapavlovski/.sdkman"
+[[ -s "/home/ilyapavlovski/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ilyapavlovski/.sdkman/bin/sdkman-init.sh"
