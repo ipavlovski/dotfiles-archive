@@ -1,21 +1,30 @@
+"""""""""""""""" MAIN """""""""""""""
+
 source ~/.vim/plugins.vim
 
 let g:startify_lists = []
 
+" leader
 inoremap jk <ESC>
 let mapleader = " "
 let maplocalleader = ","
 
+" filetype/encoding
 filetype plugin indent on
 syntax on
 set encoding=utf-8
 
+" mouse settings for vim/tmux scroll
 set ttymouse=xterm2
 set mouse=a
 
-
+" genereal settings
 set hidden
 set noswapfile
+
+
+"""""""""""" KEY MAPPINGS """"""""""""""
+
 
 " tab commands
 nnoremap <leader>} :tabnext<CR>
@@ -23,11 +32,16 @@ nnoremap <leader>{ :tabprevious<CR>
 nnoremap <leader>]] :tablast<CR>
 nnoremap <leader>[[ :tabfirst<CR>
 
+nnoremap <leader>te :tabedit<CR>
+nnoremap <leader>tc :tabclose<CR>
+
+" buffer commands
+nnoremap <leader>b :ls<cr>:b<space>
+
+" vimrc commands
 nnoremap <leader><C-s> :source ~/.vimrc<CR>
 nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<CR>
 
-nnoremap <leader>te :tabedit<CR>
-nnoremap <leader>tc :tabclose<CR>
 
 " misc commands
 nnoremap <leader>w :w<CR>
@@ -35,7 +49,7 @@ nnoremap <leader>w :w<CR>
 
 
 
-"""" LOCAL LEADER
+""""""""""""" LOCAL LEADER """""""""""""""""
 augroup myGolang
 	au!
 	autocmd FileType go
@@ -53,7 +67,7 @@ augroup END
 
 
 
-"""""""" Plug Congifurations
+"""""""" PLUG CONFIGURATIONS """"""""""""""""""""""""
 
 "" lightline.vim
 set laststatus=2
