@@ -19,9 +19,11 @@ set ttymouse=xterm2
 set mouse=a
 
 " genereal settings
+set clipboard=unnamedplus
 set hidden
 set noswapfile
-
+set smartindent
+set timeoutlen=1000 ttimeoutlen=0
 
 """""""""""" KEY MAPPINGS """"""""""""""
 
@@ -45,9 +47,13 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<CR>
 
 " misc commands
 nnoremap <leader>w :w<CR>
+nnoremap gp `[v`]
 
-
-
+" paste commands
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
 
 """"""""""""" LOCAL LEADER """""""""""""""""
 augroup myGolang
