@@ -2,6 +2,11 @@
 
 # variables
 set completion-query-items 200
+set show-all-if-ambiguous on
+set colored-stats on
+set visible-stats on
+set colored-completion-prefix on
+
 
 # readline commands
 "\C-j": backward-char

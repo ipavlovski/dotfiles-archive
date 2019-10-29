@@ -23,3 +23,5 @@ gpl
 .m2
 .sdkman
 .gem
+.xorg.log
+.ICEauthority

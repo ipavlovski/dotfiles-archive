@@ -3,6 +3,10 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+
+## stty lockup
+stty -ixon
+
 ## LOCALE
 if [[ $(type locale 2>/dev/null) && $(grep en_CA <(locale -a)) ]]; then 
     export LC_ALL=en_CA.UTF-8
