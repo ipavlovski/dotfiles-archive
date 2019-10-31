@@ -33,7 +33,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
 
 ## VARS
-export sdcard="/mnt/chromeos/removable/200GB"
+export sdcard="/run/media/ip/200GB/"
 
 
 ## PS1

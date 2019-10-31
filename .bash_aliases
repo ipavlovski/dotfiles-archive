@@ -11,3 +11,7 @@ alias ag='sudo apt-get install'
 alias cs='config status'
 alias rs='rsync -avzh --partial-dir=.rsync-partial'
 alias pacman='pacman --color=always'
+
+
+
+alias find-grep='find . -type f -iname "*.sh" -exec grep -iH "query" {} \;'

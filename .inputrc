@@ -12,5 +12,11 @@ set colored-completion-prefix on
 "\C-j": backward-char
 "\ej": backward-word
 
+
+"\C-h": kill-whole-line
+
+# alias expansion
+"\e\C-l": alias-expand-line
+
 # shell commands
 "\el": "ls -la\C-m"
