@@ -15,3 +15,5 @@ alias pacman='pacman --color=always'
 
 
 alias find-grep='find . -type f -iname "*.sh" -exec grep -iH "query" {} \;'
+alias mysql-root='sudo mysql -u root -p'
+alias spring-jpa='spring init -d=jpa,mysql,lombok --build=maven --package-name ipcode --java-version 1.11 -n Application application-name'
