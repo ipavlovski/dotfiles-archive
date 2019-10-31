@@ -30,7 +30,7 @@ shopt -s globstar
 
 ## PATH
 export PATH=$PATH:~/bin
-
+export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
 
 ## VARS
 export sdcard="/mnt/chromeos/removable/200GB"
