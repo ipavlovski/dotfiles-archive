@@ -27,3 +27,10 @@ function jss() {
     ## run java shell
     jshell boot.jsh
 }
+
+## use the 'config' wrapper to add changes, commit them and push them
+function config-push() {
+    config add -u
+    config commit -m "update."
+    config push
+}
