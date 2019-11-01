@@ -35,6 +35,7 @@ export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
 ## VARS
 export sdcard="/run/media/ip/200GB/"
 
+export MANPAGER=cat
 
 ## PS1
 function parse_dir() {
