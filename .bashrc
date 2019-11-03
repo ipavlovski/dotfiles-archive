@@ -20,6 +20,8 @@ export HISTTIMEFORMAT="%F %T " # Add timestamp to history
 export HISTFILESIZE=999999
 export HISTSIZE=999999
 
+export EDITOR=vim
+
 ## update rows and columns after each command
 shopt -s checkwinsize
 

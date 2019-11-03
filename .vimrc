@@ -25,8 +25,23 @@ set noswapfile
 set smartindent
 set timeoutlen=1000 ttimeoutlen=0
 
+" misc settings
+set lazyredraw
+set ignorecase 
+set smartcase
+
+
+set showtabline=2
+
+set pastetoggle=<F2>
+set hlsearch
+set number
+hi Search cterm=NONE ctermfg=white ctermbg=DarkYellow
+
 """""""""""" KEY MAPPINGS """"""""""""""
 
+" mark a point in the insert mode
+inoremap ;1 <c-o>ma
 
 " tab commands
 nnoremap <leader>} :tabnext<CR>
@@ -36,17 +51,17 @@ nnoremap <leader>[[ :tabfirst<CR>
 
 nnoremap <leader>te :tabedit<CR>
 nnoremap <leader>tc :tabclose<CR>
-
-" buffer commands
-nnoremap <leader>b :ls<cr>:b<space>
+nnoremap <leader>tl :ls<cr>:b<space>
 
 " vimrc commands
-nnoremap <leader><C-s> :source ~/.vimrc<CR>
-nnoremap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc<CR>
-
+nnoremap <leader>vs :source ~/.vimrc<CR>
+nnoremap <leader>ve :e ~/.vimrc<CR>
+nnoremap <leader>v. :exe getline(line('.'))<cr>
 
 " misc commands
 nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
 nnoremap gp `[v`]
 
 " paste commands
@@ -71,7 +86,11 @@ augroup END
 
 
 
-
+augroup md
+  autocmd!
+  au BufNewFile,BufRead *.md syntax keyword todo TODO
+  au BufNewFile,BufRead *.md inoremap <buffer> ;` ```<cr><cr>```<Up><Up>
+augroup END
 
 """""""" PLUG CONFIGURATIONS """"""""""""""""""""""""
 
@@ -91,7 +110,7 @@ colorscheme seoul256
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 "" Scratch
-noremap <leader>s :Scratch<CR>
+nnoremap <leader>s :Scratch<CR>
 
 "" FZF
 nnoremap <leader><C-f> :Files 
@@ -99,14 +118,19 @@ nnoremap <leader><C-l> :BLines<CR>
 nnoremap <leader><C-m> :Marks<CR>
 nnoremap <leader><C-h> :History<CR>
 nnoremap <leader><C-k> :Maps<CR>
-" nnoremap <leader><C-c> :History:<CR>
-" nnoremap <leader><C-/> :History/<CR>
 
 "" Markdown
 let g:vim_markdown_folding_level=2
 
 "" VTR
-
 nnoremap <leader>l :VtrClearRunner<CR>
 map <leader><return> :VtrSendLinesToRunner<CR>
 nnoremap <leader>ea :VtrAttachToPane<CR>
+inoremap  <c-o>:VtrSendLinesToRunner<CR>
+inoremap  <c-o>:VtrClearRunner<CR>
+
+"""" NEW
+
+:autocmd InsertEnter,InsertLeave * set cul!
+
+" inoremap  :VtrSendLinesToRunner<CR>
