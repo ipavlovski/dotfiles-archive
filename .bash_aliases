@@ -11,11 +11,16 @@ alias ag='sudo apt-get install'
 alias cs='config status'
 alias rs='rsync -avzh --partial-dir=.rsync-partial'
 alias pacman='pacman --color=always'
+alias yay='yay --color=always'
 
-
+alias sps='sudo pacman -S --noconfirm'
 
 alias find-grep='find . -type f -iname "*.sh" -exec grep -iH "query" {} \;'
 alias mysql-root='sudo mysql -u root -p'
 alias spring-jpa='spring init -d=jpa,mysql,lombok --build=maven --package-name ipcode --java-version 1.11 -n Application application-name'
 alias pwgen-copy='pwgen -s 15 1 | xsel -b'
 alias grep-sort='grep -r --include="*.sh" -l query | xargs grep -c query | sort -n -t: -k2,2 -r'
+alias find-root='find / -type f -name "filename" 2>/dev/null'
+
+alias vpn-gpl-on='sudo nmcli con up GPL --ask'
+alias vpn-gpl-off='sudo nmcli con down GPL'
