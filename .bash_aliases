@@ -26,3 +26,4 @@ alias vpn-gpl-off='sudo nmcli con down GPL'
 
 alias testdb-exec='mysql -u $USER testdb -e'
 alias testdb-read='mysql -u $USER testdb <'
+alias mysql-testdb='mysql -u testuser -p testdb'

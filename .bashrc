@@ -3,7 +3,6 @@
 ## If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
 ## stty lockup
 stty -ixon
 
@@ -14,12 +13,13 @@ if [[ $(type locale 2>/dev/null) && $(grep en_CA <(locale -a)) ]]; then
 fi
 
 # HISTORY
-# shopt -s histappend
+shopt -s histappend
+export HISTCONTROL=ignorespace
 export HISTTIMEFORMAT="%F %T " # Add timestamp to history
-# export HISTCONTROL=ignorespace
 export HISTFILESIZE=999999
 export HISTSIZE=999999
 
+## for C-x C-e and fc
 export EDITOR=vim
 
 ## update rows and columns after each command
@@ -70,16 +70,12 @@ function export_subdirs() {
 export_subdirs ~
 
 
-
-
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 fi
-
 
 ## aliases
 if [ -f ~/.bash_aliases ]; then
@@ -100,15 +96,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
-
-
 ## tmux
-# export PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}: ${PWD##*/}\007"'
-## [ -z "$TMUX"  ] && { tmux attach-session -d -t local || exec tmux new-session -s local; }
-[[ -z "$TMUX"  ]] && { tmux new-session -A -s main; }
-## tmux new-session -A -s main
+[[ -z "$TMUX"  ]] && { tmux new-session -A -s a; }
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/ilyapavlovski/.sdkman"
-[[ -s "/home/ilyapavlovski/.sdkman/bin/sdkman-init.sh" ]] && source "/home/ilyapavlovski/.sdkman/bin/sdkman-init.sh"
