@@ -1,0 +1,3 @@
+#! /bin/bash
+
+if ! wmctrl -R Terminal; then exo-open --launch TerminalEmulator; fi

@@ -1,0 +1,3 @@
+#! /bin/bash
+
+if ! wmctrl -R Chromium; then exo-open --launch WebBrowser; fi
