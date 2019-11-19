@@ -4,9 +4,11 @@
 ## silence the bell
 xset -b
 
-## xmodmap
-## xmodmap ~/.xmodmap
+## keyboard layout
 setxkbmap -option ctrl:nocaps
+
+## key shortcuts
+xbindkeys
 
 ## exec wm
 exec startxfce4

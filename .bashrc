@@ -28,6 +28,9 @@ shopt -s checkwinsize
 # Use pattern '**' to match everything
 shopt -s globstar
 
+## do not auto-escape variables '\$' on complete
+shopt -s direxpand
+
 ## ALIASES
 
 ## PATH
