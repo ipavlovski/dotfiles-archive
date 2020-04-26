@@ -1,0 +1,8 @@
+#! /bin/bash
+
+tempdir=/tmp/screenshot
+mkdir -p $tempdir
+# export DISPLAY
+# echo "DISPLAY: $DISPLAY" > /tmp/debug/screenshot
+scrot -sf -z $tempdir/'%Y-%m-%d_$wx$h.png' -e 'xclip -selection c -t image/png < $f'
+

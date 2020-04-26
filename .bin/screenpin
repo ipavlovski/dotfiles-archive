@@ -1,0 +1,11 @@
+#! /bin/bash
+
+# echo "hello! $(date)" > /home/ip/.bin/hello.txt
+tempdir=/tmp/screenpin
+mkdir -p $tempdir
+# scrot -fs $tempdir/screenpin.png -e 'feh $f --action1 "echo %F | xclip -i"'
+
+filename=$tempdir/screenpin.png
+if [[ -f $filename ]]; then rm $filename; fi
+scrot -fs $filename
+feh --action1 'echo %F | xclip -i' $filename

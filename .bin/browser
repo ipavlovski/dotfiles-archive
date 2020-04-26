@@ -1,3 +1,20 @@
 #! /bin/bash
 
-if ! wmctrl -R Chromium; then exo-open --launch WebBrowser; fi
+# if ! wmctrl -R Chromium; then exo-open --launch WebBrowser; fi
+
+workspace=$(wmctrl -d | grep "*" | cut -d" " -f1)
+match=$(wmctrl -l | grep -E "^.{12}${workspace}.*Chromium")
+
+if [[ $workspace == 0 ]]; then
+	if [[ -z "$match" ]]; then
+		exo-open --launch WebBrowser
+	else 
+		wmctrl -i -R ${match:0:10}
+	fi
+else 
+	if [[ ! -z "$match" ]]; then
+		wmctrl -i -R ${match:0:10}
+	else
+		notify-send "Chrome Activation" "No chrome window on current desktop"
+	fi
+fi

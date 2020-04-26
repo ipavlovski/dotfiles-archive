@@ -29,3 +29,9 @@ alias testdb-read='mysql -u $USER testdb <'
 alias mysql-testdb='mysql -u testuser -p testdb'
 
 alias tempdir='cd $(tmux showenv -g tempdir | cut -d\= -f2)'
+
+alias copy-headers="xsel -bo | tr '\n' ',' | csv2md | xsel -bi"
+alias copy-body="xsel -bo | sed 's/\t/,/g' | csv2md | sed 2d | xsel -bi"
+
+alias subl3='subl3 -n'
+alias R='R --no-save'

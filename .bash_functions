@@ -10,7 +10,7 @@ function jss() {
     fi
 
     ## build the jar - if fail to build, stop going.
-    mvn install -DskipTests
+    mvn clean install -DskipTests
     if [[ $? != 0 ]]; then
         echo "Failed to compile. Exiting."
         return
@@ -24,8 +24,14 @@ function jss() {
     ## export the classpath
     export CLASSPATH="target/BOOT-INF/classes/:target/BOOT-INF/lib/*"
 
-    ## run java shell
-    jshell boot.jsh
+    ## run java shell with boot.jsh file, if it is there
+    local args="-R -Dspring.profiles.active=test"
+    local boot="src/main/resources/boot.jsh"
+    if [[ -f "$boot" ]]; then
+        jshell $args $boot
+    else
+        jshell $args
+    fi
 }
 
 ## use the 'config' wrapper to add changes, commit them and push them
@@ -34,3 +40,10 @@ function config-push() {
     config commit -m "update."
     config push
 }
+
+## calculator
+function c() {
+    printf "%s\n" "$*" | bc 
+}
+
+## copy from intellij
