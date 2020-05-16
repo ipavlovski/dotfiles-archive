@@ -13,11 +13,15 @@ if [[ $(type locale 2>/dev/null) && $(grep en_CA <(locale -a)) ]]; then
 fi
 
 # HISTORY
+# from https://sanctum.geek.nz/arabesque/better-bash-history/
 shopt -s histappend
-export HISTCONTROL=ignorespace
-export HISTTIMEFORMAT="%F %T " # Add timestamp to history
-export HISTFILESIZE=999999
-export HISTSIZE=999999
+shopt -s cmdhist
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+HISTCONTROL=ignoreboth
+HISTIGNORE='ls:bg:fg:history'
+HISTTIMEFORMAT='%F %T '
+PROMPT_COMMAND='history -a'
 
 ## for C-x C-e and fc
 export EDITOR=vim
@@ -34,12 +38,12 @@ shopt -s direxpand
 ## ALIASES
 
 ## PATH
-export PATH=$PATH:~/bin
-export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
+export PATH=$PATH:~/.local/bin
+# export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
 
 ## VARS
-export sdcard="/run/media/ip/200GB/"
-
+export sdcard="/run/media/ip/200GB"
+export scratches="$HOME/.IntelliJIdea2019.3/config/scratches"
 export MANPAGER=cat
 
 ## PS1
@@ -76,8 +80,6 @@ export_subdirs ~
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
 fi
 
 ## aliases
