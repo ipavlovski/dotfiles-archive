@@ -1,5 +1,0 @@
-#! /bin/bash
-
-if ! wmctrl -R "~/docs"; then 
-	subl3 ~/docs/notes/* ~/docs/blogs/codeblog/source/_drafts
-fi

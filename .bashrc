@@ -43,7 +43,8 @@ export PATH=$PATH:~/.local/bin
 
 ## VARS
 export sdcard="/run/media/ip/200GB"
-export scratches="$HOME/.IntelliJIdea2019.3/config/scratches"
+export scratches="$HOME/.config/JetBrains/IntelliJIdea2020.1/scratches"
+export blog="$HOME/projects/codeblog/source/_drafts/"
 export MANPAGER=cat
 
 ## PS1

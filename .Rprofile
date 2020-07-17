@@ -3,4 +3,6 @@ suppressPackageStartupMessages({
   library(testthat)
   library(data.table)
 })
-options(digits=3)
+
+options(repos='http://cran.us.r-project.org')
+options(digits=6)

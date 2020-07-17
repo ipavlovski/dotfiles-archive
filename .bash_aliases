@@ -9,7 +9,7 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias ac='apt-cache search'
 alias ag='sudo apt-get install'
 alias cs='config status'
-alias rs='rsync -avzh --partial-dir=.rsync-partial'
+alias rs='rsync -avzzh --partial-dir=.rsync-partial --progress'
 alias pacman='pacman --color=always'
 alias yay='yay --color=always'
 
@@ -31,7 +31,9 @@ alias mysql-testdb='mysql -u testuser -p testdb'
 alias copy-headers="xsel -bo | tr '\n' ',' | csv2md | xsel -bi"
 alias copy-body="xsel -bo | sed 's/\t/,/g' | csv2md | sed 2d | xsel -bi"
 
-alias subl3='subl3 -n'
+alias s='subl3 -n'
 alias R='R --no-save'
 
 alias temp='TEMP=$(mktemp -d -p /tmp tmp-XXXXX) && cd $TEMP'
+
+alias grepc="grep -hri -C 0 --group-separator=\$'\n-\n'"
