@@ -1,9 +1,9 @@
 ### BASHRC ###
 
-## If not running interactively, don't do anything
+## if not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## stty lockup
+## prevent stty lockup
 stty -ixon
 
 ## LOCALE
@@ -23,28 +23,27 @@ HISTIGNORE='ls:bg:fg:history'
 HISTTIMEFORMAT='%F %T '
 PROMPT_COMMAND='history -a'
 
-## for C-x C-e and fc
-export EDITOR=vim
+
+## SHELL OPTIONS
 
 ## update rows and columns after each command
 shopt -s checkwinsize
-
 # Use pattern '**' to match everything
 shopt -s globstar
-
 ## do not auto-escape variables '\$' on complete
 shopt -s direxpand
 
-## ALIASES
 
 ## PATH
-export PATH=$PATH:~/.local/bin
-# export PATH=$PATH:/usr/lib/jvm/java-11-openjdk/bin
 
-## VARS
 export sdcard="/run/media/ip/200GB"
 export scratches="$HOME/.config/JetBrains/IntelliJIdea2020.1/scratches"
 export blog="$HOME/projects/codeblog/source/_drafts/"
+
+## VARS
+export PATH=$PATH:~/.local/bin
+## for C-x C-e and fc
+export EDITOR=vim
 export MANPAGER=cat
 
 ## PS1
@@ -65,8 +64,6 @@ function parse_dir() {
 	awk '{printf "\033[35m$%s\033[36m%s", $2, $3}' <<<$match
     fi   
 }
-
-# PS1='\e\[\033[1;34m\]\n::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
 PS1='\e\[\033[1;34m\]::: \[\033[1;32m\]\u\[\033[1;34m\]@\[\033[1;31m\]\h\[\033[1;34m\] ::: $(parse_dir)\n\$ \[\033[0m\]'
 
 function export_subdirs() {

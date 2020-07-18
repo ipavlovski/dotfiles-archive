@@ -14,7 +14,7 @@ XDG_SCREENSHOTS_DIR="$HOME/documents/screenshots"
 XDG_NOTES_DIR="$HOME/documents/notes"
 
 XDG_DOWNLOAD_DIR="$HOME/downloads"
-XDG_TEMPLATES_DIR="$HOME/downloads"
+XDG_TEMPLATES_DIR="$HOME/documents/pics"
 XDG_PUBLICSHARE_DIR="$HOME/downloads"
 XDG_MUSIC_DIR="$HOME/downloads"
 XDG_VIDEOS_DIR="$HOME/downloads"

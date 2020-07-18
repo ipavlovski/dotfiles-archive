@@ -46,4 +46,30 @@ function c() {
     printf "%s\n" "$*" | bc 
 }
 
-## copy from intellij
+
+# Usage: grepc "query" -H
+# Depends on `$blog` and `$scratches` to be there.
+function grepc() {
+   # error check: variables blog and scratches. exit with message
+   grep -P -hri -C 0 --group-separator=$'\n\n' "$@" $blog $scratches 
+}
+
+function grepo() {
+    # get the command results
+    local results="$(pcregrep -r -cl $1 $scratches | awk -F: '{ print $2 " " $1 }' | sort -hr)"
+
+    if [[ $2 == "-o" ]]; then 
+        echo -n $1 | xsel -bi
+        echo "$results" | cut -d" " -f2 | xargs subl3 -n
+    else
+        echo "$results"
+    fi
+}
+
+# Usage: grepc ...args
+# Depends on `$blog` and `$scratches` to be there.
+function clfu() {
+    local clfu="$HOME/.clfu"
+   # error check: variables blog and scratches. exit with message
+   grep --color=always -P "$1" -B 1 --group-separator "" "$clfu" | less -FXR
+}
